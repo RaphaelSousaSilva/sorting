@@ -20,7 +20,7 @@ public class MainGrades {
 
         Grade[] mergedGrades = mergeSort.order(grades1, grades1.length);
         for (Grade gr : mergedGrades) {
-            System.out.println(gr.getValue());
+            System.out.println(gr.getStudent() + " - " + gr.getValue());
         }
     }
 }
