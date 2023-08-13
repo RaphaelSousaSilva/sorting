@@ -5,15 +5,14 @@ import model.Grade;
 public class MergeSort implements SortGrade {
 
     @Override
-    public Grade[] order(Grade[] grades, Integer size) {
-        Grade[] mergedGrades = new Grade[size];
+    public Grade[] order(Grade[] grades, int start, int division, int end) {
+        Grade[] mergedGrades = new Grade[end - start];
         int currentMergedGrades = 0;
 
-        int currentGrades1 = 0;
-        int firstOrderedPartSize = size / 2 - 1;
-        int currentGrades2 = firstOrderedPartSize;
+        int currentGrades1 = start;
+        int currentGrades2 = division;
 
-        while (currentGrades1 < firstOrderedPartSize && currentGrades2 < size) {
+        while (currentGrades1 < division && currentGrades2 < end) {
             Grade grade1 = grades[currentGrades1];
             Grade grade2 = grades[currentGrades2];
             Grade lowerGrade;
@@ -30,14 +29,19 @@ public class MergeSort implements SortGrade {
             currentMergedGrades++;
         }
 
-        while (currentGrades1 < firstOrderedPartSize) {
+        while (currentGrades1 < division) {
             mergedGrades[currentMergedGrades++] = grades[currentGrades1++];
         }
 
-        while (currentGrades2 < grades.length) {
+        while (currentGrades2 < end) {
             mergedGrades[currentMergedGrades++] = grades[currentGrades2++];
         }
 
-        return mergedGrades;
+        int j = 0;
+        while (j < mergedGrades.length) {
+            grades[start + j] = mergedGrades[j++];
+        }
+
+        return grades;
     }
 }
