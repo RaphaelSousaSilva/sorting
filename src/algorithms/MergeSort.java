@@ -4,8 +4,7 @@ import model.Grade;
 
 public class MergeSort implements SortGrade {
 
-    @Override
-    public Grade[] order(Grade[] grades, int start, int division, int end) {
+    public Grade[] merge(Grade[] grades, int start, int division, int end) {
         Grade[] mergedGrades = new Grade[end - start];
         int currentMergedGrades = 0;
 
@@ -43,5 +42,17 @@ public class MergeSort implements SortGrade {
         }
 
         return grades;
+    }
+
+
+    @Override
+    public void sort (Grade[] grades, int start, int end) {
+        int mid = (start + end) / 2;
+        if (end - start == 1) {
+            return;
+        }
+        sort(grades, start, mid);
+        sort(grades, mid, end);
+        merge(grades, start, mid, end);
     }
 }
