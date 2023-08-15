@@ -1,4 +1,4 @@
-import algorithms.MergeSort;
+import algorithms.MergeSortGrade;
 import model.Grade;
 
 public class MainGrades {
@@ -17,9 +17,9 @@ public class MainGrades {
                 new Grade("George", 9.7),
         };
 
-        MergeSort mergeSort = new MergeSort();
+        MergeSortGrade mergeSortGrade = new MergeSortGrade();
 
-        mergeSort.sort(grades, 0, grades.length);
+        mergeSortGrade.sort(grades, 0, grades.length);
 
         for (Grade gr : grades) {
             System.out.println(gr.getStudent() + " - " + gr.getValue());

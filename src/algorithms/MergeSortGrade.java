@@ -2,7 +2,7 @@ package algorithms;
 
 import model.Grade;
 
-public class MergeSort implements SortGrade {
+public class MergeSortGrade implements SortGrade {
 
     public Grade[] merge(Grade[] grades, int start, int division, int end) {
         Grade[] mergedGrades = new Grade[end - start];
