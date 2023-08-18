@@ -4,5 +4,5 @@ import model.Grade;
 
 public interface SortGrade {
 
-    Grade[] order(Grade[] grades, Integer size);
+    void sort(Grade[] grades, int start, int end);
 }

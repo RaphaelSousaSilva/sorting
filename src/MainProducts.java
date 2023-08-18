@@ -2,10 +2,10 @@ import algorithms.SelectionSortProduct;
 import algorithms.SortProduct;
 import model.Product;
 
-public class Main {
+public class MainProducts {
     public static void main(String[] args) {
         SortProduct sortProduct = new SelectionSortProduct();
-        Product[] products = getProdutos();
+        Product[] products = getProducts();
 
         sortProduct.order(products, products.length);
 
@@ -14,20 +14,20 @@ public class Main {
 
     private static void printProducts(Product[] products) {
         for (Product product : products) {
-            System.out.println("Produto " + product.getName());
-            System.out.println("Valor " + product.getValue());
+            System.out.println("Product " + product.getName());
+            System.out.println("Price " + product.getValue());
             System.out.println("-----");
         }
     }
 
 
-    private static Product[] getProdutos() {
+    private static Product[] getProducts() {
         Product[] products = {
                 new Product("Lamborghini", 1000000d),
-                new Product("Fox", 45000d),
-                new Product("Fusca", 15000d),
-                new Product("Hb20", 62000d),
-                new Product("Brasilia", 17000d)
+                new Product("Fusion", 45000d),
+                new Product("Crv", 15000d),
+                new Product("Corolla", 62000d),
+                new Product("Elantra", 17000d)
         };
 
         return products;
