@@ -2,9 +2,19 @@ package algorithms;
 
 import model.Grade;
 
-public class NewSort {
+public class QuickSort implements SortGrade {
 
-    public int findLowers(Grade[] grades, int begining, int end) {
+    @Override
+    public void sort(Grade[] grades, int start, int end) {
+        if (end - start <= 1) {
+            return;
+        }
+        int pivot = split(grades, start, end);
+        sort(grades, start, pivot);
+        sort(grades, pivot + 1, end);
+    }
+
+    public int split(Grade[] grades, int begining, int end) {
         Grade search = grades[end - 1];
         int countLowers = 0;
         for (int i = 0; i <= grades.length - 1; i++) {
