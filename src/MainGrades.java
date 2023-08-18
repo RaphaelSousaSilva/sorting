@@ -1,5 +1,5 @@
 import algorithms.MergeSortGrade;
-import algorithms.NewSort;
+import algorithms.QuickSort;
 import model.Grade;
 
 public class MainGrades {
@@ -17,10 +17,8 @@ public class MainGrades {
                 new Grade("Michael", 7),
                 new Grade("Monica", 6.5),
         };
-        NewSort newSort = new NewSort();
-        int lowers = newSort.findLowers(grades, 0, grades.length);
-        System.out.println(lowers);
-
+        QuickSort quickSort = new QuickSort();
+        quickSort.sort(grades, 0, grades.length);
         for (Grade gr : grades) {
             System.out.println(gr.getStudent() + " - " + gr.getValue());
         }
