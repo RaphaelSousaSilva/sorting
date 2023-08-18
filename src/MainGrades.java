@@ -17,11 +17,17 @@ public class MainGrades {
                 new Grade("Michael", 7),
                 new Grade("Monica", 6.5),
         };
-        QuickSort quickSort = new QuickSort();
-        quickSort.sort(grades, 0, grades.length);
+
+        quicksort(grades);
+
         for (Grade gr : grades) {
             System.out.println(gr.getStudent() + " - " + gr.getValue());
         }
+    }
+
+    private static void quicksort(Grade[] grades) {
+        QuickSort quickSort = new QuickSort();
+        quickSort.sort(grades, 0, grades.length);
     }
 
     private static void mergeSort(Grade[] grades) {
