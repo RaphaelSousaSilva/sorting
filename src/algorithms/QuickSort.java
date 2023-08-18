@@ -14,10 +14,10 @@ public class QuickSort implements SortGrade {
         sort(grades, pivot + 1, end);
     }
 
-    public int split(Grade[] grades, int begining, int end) {
+    public int split(Grade[] grades, int start, int end) {
         Grade search = grades[end - 1];
         int countLowers = 0;
-        for (int i = 0; i <= grades.length - 1; i++) {
+        for (int i = start; i <= grades.length - 1; i++) {
             if (grades[i].getValue() < search.getValue()) {
                 change(grades, i, countLowers);
                 countLowers++;
