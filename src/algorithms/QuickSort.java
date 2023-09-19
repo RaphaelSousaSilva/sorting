@@ -9,15 +9,15 @@ public class QuickSort implements SortGrade {
         if (end - start <= 1) {
             return;
         }
-        int pivot = split(grades, start, end);
+        int pivot = partition(grades, start, end);
         sort(grades, start, pivot);
         sort(grades, pivot + 1, end);
     }
 
-    public int split(Grade[] grades, int start, int end) {
+    public int partition(Grade[] grades, int start, int end) {
         Grade search = grades[end - 1];
-        int countLowers = 0;
-        for (int i = start; i <= grades.length - 1; i++) {
+        int countLowers = start;
+        for (int i = start; i <= end - 1; i++) {
             if (grades[i].getValue() < search.getValue()) {
                 change(grades, i, countLowers);
                 countLowers++;
